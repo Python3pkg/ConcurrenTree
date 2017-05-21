@@ -1,4 +1,4 @@
-import node
+from . import node
 
 class StringNode(node.Node):
 	def __init__(self, value):

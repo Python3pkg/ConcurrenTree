@@ -1,12 +1,12 @@
 from ConcurrenTree import instruction, operation
-import context
+from . import context
 
 class NumberContext(context.Context):
 	def __init__(self, node, unique = None):
 		context.Context.__init__(self, node)
 		if unique == None:
-			print "WARNING: Random unique being used in NumberNode."
-			print "Uniques should be based on personal id data to avoid collisions."
+			print("WARNING: Random unique being used in NumberNode.")
+			print("Uniques should be based on personal id data to avoid collisions.")
 			import random
 			unique = random.randint(0, 2**32)
 		self.unique = unique

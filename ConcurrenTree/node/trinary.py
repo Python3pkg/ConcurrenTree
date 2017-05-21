@@ -1,4 +1,4 @@
-import node
+from . import node
 
 class TrinaryNode(node.Node):
 	def __init__(self, value):

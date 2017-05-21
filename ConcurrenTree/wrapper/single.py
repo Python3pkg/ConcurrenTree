@@ -1,4 +1,4 @@
-from wrapper import Wrapper
+from .wrapper import Wrapper
 
 class SingleWrapper(Wrapper):
 	def get(self):

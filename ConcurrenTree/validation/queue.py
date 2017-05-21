@@ -1,4 +1,4 @@
-from Queue import Queue, Empty
+from .Queue import Queue, Empty
 
 class ValidationQueue(object):
 	'''
@@ -41,7 +41,7 @@ class ValidationQueue(object):
 
 	def pop(self):
 		try:
-			return self.source.next()
+			return next(self.source)
 		except StopIteration:
 			pass
 		try:

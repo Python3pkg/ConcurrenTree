@@ -9,7 +9,7 @@ __all__ = [
 ]
 
 from ConcurrenTree import node
-import map, string, list, number, single, trinary
+from . import map, string, list, number, single, trinary
 
 def make(node_obj, opsink, *args):
 	# Create a context object

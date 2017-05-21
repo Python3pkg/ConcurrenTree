@@ -2,10 +2,10 @@ from ejtp import frame, address as ejtpaddress, client as ejtpclient
 
 from ConcurrenTree import document, event
 
-import host_table
-import message as mcp_message
-import gear_validator
-import demo
+from . import host_table
+from . import message as mcp_message
+from . import gear_validator
+from . import demo
 
 from sys import stderr
 import json
@@ -60,7 +60,7 @@ class Gear(object):
 				if self.can_write(None, docname):
 					self.storage.op(docname, op)
 				else:
-					print "Not applying op, you don't have permission"
+					print("Not applying op, you don't have permission")
 
 			# Set document to use the above function
 			doc.opsink = opsink

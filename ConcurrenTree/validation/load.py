@@ -1,4 +1,4 @@
-import request
+from . import request
 
 class LoadRequest(request.ValidationRequest):
 	'''

@@ -1,14 +1,14 @@
-from node import Node
+from .node import Node
 from random import SystemRandom
 
 # Core types
 
-from string import StringNode
-from map import MapNode
-from list import ListNode
-from number import NumberNode
-from single import SingleNode
-from trinary import TrinaryNode
+from .string import StringNode
+from .map import MapNode
+from .list import ListNode
+from .number import NumberNode
+from .single import SingleNode
+from .trinary import TrinaryNode
 
 randy = SystemRandom()
 
@@ -29,7 +29,7 @@ def make(value, unique=bigrandom):
 		return value
 
 	# String
-	elif type(value) in (str, unicode):
+	elif type(value) in (str, str):
 		return StringNode(value)
 
 	# Map
@@ -48,7 +48,7 @@ def make(value, unique=bigrandom):
 		return n
 
 	# Number
-	elif type(value) in (int, float, long):
+	elif type(value) in (int, float, int):
 		return NumberNode(value, unique())
 
 	# Trinary

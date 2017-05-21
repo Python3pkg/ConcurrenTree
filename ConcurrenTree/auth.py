@@ -1,4 +1,4 @@
-import user
+from . import user
 
 class Auth(object):
     ''' Key-value store for storage spaces keyed on username. '''

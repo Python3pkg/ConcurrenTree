@@ -9,7 +9,7 @@ def test_recursive(mod, debug=False):
 		for child in mod.__all__:
 			fullchildname = mod.__name__+"."+child
 			if debug:
-				print "Testing", fullchildname
+				print("Testing", fullchildname)
 			childmod = __import__(fullchildname, fromlist=[""])
 			cf, ct = test_recursive(childmod, debug)
 			failure_count += cf
@@ -18,7 +18,7 @@ def test_recursive(mod, debug=False):
 
 def test_ctree(debug = False):
 	failures, tests = test_recursive(ConcurrenTree, debug)
-	print "%d failures, %d tests." % (failures, tests)
+	print("%d failures, %d tests." % (failures, tests))
 
 if __name__ == "__main__":
 	import sys

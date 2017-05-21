@@ -1,5 +1,5 @@
 from ConcurrenTree import operation, instruction, address, node
-import context
+from . import context
 
 class StringContext(context.Context):
 	def insert(self, pos, value):

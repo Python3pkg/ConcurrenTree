@@ -1,4 +1,4 @@
-from wrapper import Wrapper
+from .wrapper import Wrapper
 
 class MapWrapper(Wrapper):
 	def __getitem__(self, i):

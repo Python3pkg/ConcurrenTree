@@ -1,7 +1,7 @@
 from ejtp.util.crashnicely import Guard
 from ejtp.util.hasher import strict
 from ConcurrenTree import operation
-from demo import bob, bridget, demo_data
+from .demo import bob, bridget, demo_data
 from sys import stderr
 import random
 import json
@@ -252,21 +252,21 @@ class Reader(MessageProcessor):
 		elif 'ackr' in content and content['type'] == 'mcp-ack':
 			return True
 		else:
-			print>>stderr, "Malformed frame:\n%s" % json.dumps(content, indent=2)
+			print("Malformed frame:\n%s" % json.dumps(content, indent=2), file=stderr)
 
 	def read(self, content, sender=None):
 		try:
 			content = json.loads(content)
 		except:
-			print "COULD NOT PARSE JSON:"
-			print content
+			print("COULD NOT PARSE JSON:")
+			print(content)
 		t = content['type']
 		if self.acknowledge(content, sender): return
 		fname = t.replace('-','_')
 		if hasattr(self, fname):
 			return getattr(self, fname)(content, sender)
 		else:
-			print "Unknown msg type %r" % t
+			print("Unknown msg type %r" % t)
 
 	# Message handlers
 
@@ -328,10 +328,10 @@ class Reader(MessageProcessor):
 				)
 
 	def mcp_error(self, content, sender):
-		print "Error from:", sender, ", code", content["code"]
-		print repr(content['msg'])
+		print("Error from:", sender, ", code", content["code"])
+		print(repr(content['msg']))
 		if 'data' in content and content['data']:
-			print strict(content['data'])
+			print(strict(content['data']))
 		content['sender'] = sender
 		self.gear.evgrid.happen('recv_error', content)
 

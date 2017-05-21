@@ -1,4 +1,4 @@
-import node
+from . import node
 from ejtp.util.hasher import strict
 
 class ListNode(node.Node):

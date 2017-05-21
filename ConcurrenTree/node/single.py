@@ -1,4 +1,4 @@
-import node
+from . import node
 
 class SingleNode(node.Node):
 	def __init__(self, limit=None):

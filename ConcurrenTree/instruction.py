@@ -1,5 +1,5 @@
 from ConcurrenTree import ModelBase, node
-from address import Address
+from .address import Address
 
 def validpos(tree, pos):
 	if not (pos <= len(tree) and pos >= 0):

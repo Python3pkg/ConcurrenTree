@@ -1,5 +1,5 @@
 import json
-from document import Document
+from .document import Document
 from dbcps.storage import Storage
 
 class UserStorage(object):

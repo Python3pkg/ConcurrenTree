@@ -1,4 +1,4 @@
-from wrapper import Wrapper
+from .wrapper import Wrapper
 
 class StringWrapper(Wrapper):
 	def __getitem__(self, i):

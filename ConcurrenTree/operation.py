@@ -1,8 +1,8 @@
 import ejtp.util.hasher as hasher
 
 from ConcurrenTree import ModelBase, node
-from address import Address
-import instruction
+from .address import Address
+from . import instruction
 
 from copy import deepcopy
 import traceback

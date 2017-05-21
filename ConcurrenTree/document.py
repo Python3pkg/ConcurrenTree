@@ -63,7 +63,7 @@ class Document(ModelBase):
 
 	def pretty(self):
 		# Pretty-prints the JSON content
-		print self.wrapper().pretty()
+		print(self.wrapper().pretty())
 
 	@property
 	def applied(self):

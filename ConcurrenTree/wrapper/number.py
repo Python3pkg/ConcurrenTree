@@ -1,4 +1,4 @@
-from wrapper import Wrapper
+from .wrapper import Wrapper
 
 class NumberWrapper(Wrapper):
 	def __init__(self, node, opsink, unique=None):
@@ -20,7 +20,7 @@ class NumberWrapper(Wrapper):
 		return int(self.value)
 
 	def __long__(self):
-		return long(self.value)
+		return int(self.value)
 
 	def __float__(self):
 		return float(self.value)

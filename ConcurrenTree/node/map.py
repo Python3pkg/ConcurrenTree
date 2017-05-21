@@ -1,5 +1,5 @@
-import node
-import single
+from . import node
+from . import single
 from ejtp.util import hasher
 
 class MapNode(node.Node):
@@ -10,7 +10,7 @@ class MapNode(node.Node):
 		for k in self.value:
 			if isinstance(self.value[k], node.Node):
 				self._value[k] = self.value[k].key
-			print "Setting limit on", k
+			print("Setting limit on", k)
 			s = single.SingleNode(limit=self.value[k])
 			self[k] = s
 		self.update(source)
@@ -42,13 +42,13 @@ class MapNode(node.Node):
 		# Due to mapping semantics, "pos" is the key, and "key" must be "/single".
 		if key != "/single":
 			raise KeyError("Mapping can only contain SingleNodes")
-		if type(pos) not in (unicode, str):
+		if type(pos) not in (str, str):
 			raise TypeError("pos must be str")
 		return self._data[pos]
 
 	def _put(self, pos, obj):
 		# "pos" should be a string key.
-		if type(pos) not in (unicode, str):
+		if type(pos) not in (str, str):
 			raise TypeError("pos must be str, got %r instead" % pos)
 		if not isinstance(obj,single.SingleNode):
 			raise TypeError("obj must be a SingleNode")

@@ -167,7 +167,7 @@ class ChildSet:
 		if self.limit != None and key != self.limit:
 			raise ValueError("Childset only accepts key "+self.limit)
 		if key in self:
-			print "Warning: clobbering over key "+repr(key)
+			print("Warning: clobbering over key "+repr(key))
 		self.children[key] = value
 
 	def __contains(self, key):
@@ -187,7 +187,7 @@ class ChildSet:
 
 	@property
 	def sorted(self):
-		keys = self.children.keys()
+		keys = list(self.children.keys())
 		keys.sort()
 		# always have "/single" win
 		if "/single" in keys:

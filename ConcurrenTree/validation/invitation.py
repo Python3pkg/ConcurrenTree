@@ -1,4 +1,4 @@
-import request
+from . import request
 
 class InvitationRequest(request.ValidationRequest):
 	'''
@@ -33,5 +33,5 @@ def mock_invitation():
 	False
 	'''
 	def printer(z):
-		print z
+		print(z)
 	return InvitationRequest("x", "y", printer)

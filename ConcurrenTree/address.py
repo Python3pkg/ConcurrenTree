@@ -13,7 +13,7 @@ class Address(ModelBase):
 			self.parse(target)
 		elif isinstance(target, Address):
 			self.layers = list(target.layers) # copies data, not ref
-		elif type(target) in (str, unicode):
+		elif type(target) in (str, str):
 			self.layers = json.loads(target)
 		else:
 			raise TypeError("Expected list or address.Address, got "+str(type(target)))
@@ -30,7 +30,7 @@ class Address(ModelBase):
 				else:
 					raise ValueError("Address list cannot contain consecutive ints")
 
-			elif type(i) in (str, unicode):
+			elif type(i) in (str, str):
 				progress.append(i)
 				pos = None
 			else:
@@ -115,7 +115,7 @@ class Address(ModelBase):
 
 	def __repr__(self):
 		classname = repr(self.__class__).split()[1]
-		return "<%s instance %s at %s>" % (classname, str(self), hex(long(id(self)))[:-1])
+		return "<%s instance %s at %s>" % (classname, str(self), hex(int(id(self)))[:-1])
 
 def expand(l):
 	''' Expands all sub-lists '''

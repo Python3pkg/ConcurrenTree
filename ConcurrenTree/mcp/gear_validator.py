@@ -19,7 +19,7 @@ class GearValidator(object):
 			if result:
 				self.gear.storage.op(docname, op)
 			else:
-				print "Rejecting operation for docname: %r" % docname
+				print("Rejecting operation for docname: %r" % docname)
 		return self.validate(
 			validation.make("operation", author, docname, op, callback)
 		)
@@ -29,7 +29,7 @@ class GearValidator(object):
 			if result:
 				self.gear.hosts.crypto_set(author, encryptor)
 			else:
-				print "Rejecting hello from sender: %r" % encryptor
+				print("Rejecting hello from sender: %r" % encryptor)
 		return self.validate(
 			validation.make("hello", author, encryptor, callback)
 		)

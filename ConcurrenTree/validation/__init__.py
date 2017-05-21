@@ -8,12 +8,12 @@ __all__ = [
 	'request',
 ]
 
-from hello      import HelloRequest
-from invitation import InvitationRequest
-from load       import LoadRequest
-from operation  import OperationRequest
+from .hello      import HelloRequest
+from .invitation import InvitationRequest
+from .load       import LoadRequest
+from .operation  import OperationRequest
 
-from queue import ValidationQueue
+from .queue import ValidationQueue
 
 def make(request_type, *args, **kwargs):
 	if   request_type == "invitation":
